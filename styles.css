@@ -1,0 +1,76 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: black;
+}
+
+#leftMenu {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 360px; /* Set a fixed width */
+    overflow-y: auto; /* Enable vertical scrolling for overflowed content */
+    max-height: 100vh; /* Set a maximum height for the leftMenu */
+}
+
+#selectedGame {
+    text-align: center;
+}
+
+/* #toggleAlphabetical,
+#toggleDefault,
+#toggleByMinutes {
+    margin-bottom: 10px;
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+} */
+
+#toggleAlphabetical:hover,
+#toggleDefault:hover {
+    text-decoration: underline;
+}
+
+#gameGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.gameLabel {
+    position: relative; /* Ensure position relative for absolute positioning */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gameLabel.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gameImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.minutesPlayedBox {
+    position: absolute;
+    top: 5px; /* Add margin from the top */
+    right: 5px; /* Add margin from the right */
+    background: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
+    color: white;
+    padding: 5px;
+    border-radius: 0 0 10px 0; /* Rounded corners on the bottom left */
+    font-size: 24px;
+}
